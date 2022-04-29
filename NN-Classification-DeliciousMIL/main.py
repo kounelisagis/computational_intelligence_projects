@@ -1,6 +1,6 @@
 from reader import *
 from preprocessor import preprocessor
-from neural_net import create_nn
+from neural_net import train_nn
 
 vcbs = read_vocabs()
 vcbs_size = len(vcbs)
@@ -14,4 +14,4 @@ test_text = read_data(filename='data/test-data.dat')
 test_vectors = preprocessor(vcbs_size, test_text, option='standardization') # X
 test_labels = read_labels(filename='data/test-label.dat') # y
 
-create_nn(train_vectors, train_labels, test_vectors, test_labels, vcbs_size)
+train_nn(train_vectors, train_labels, test_vectors, test_labels, vcbs_size)
