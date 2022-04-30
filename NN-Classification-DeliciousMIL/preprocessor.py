@@ -1,6 +1,6 @@
 import numpy as np
 
-def preprocess_text(txt, vocab_size, option=None):
+def preprocessor(vocab_size, txt, option=None):
 
     def create_bow_vectors():
         bow_vectors = np.zeros((len(txt), vocab_size))
@@ -32,9 +32,4 @@ def preprocess_text(txt, vocab_size, option=None):
     elif option == 'standardization':
         standardization(vectors)
 
-    return vectors
-
-
-def preprocessor(vocab_size, text, option=None):
-    vectors = preprocess_text(text, vocab_size, option=option)
     return vectors
