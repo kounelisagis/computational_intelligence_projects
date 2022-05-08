@@ -10,18 +10,17 @@ def preprocessor(vocab_size, txt, option=None):
         
         return bow_vectors
 
-    def normalization(vecs):
-        for vec in vecs:
-            vec /= np.max(vec)
-
     def centering(vecs):
         for vec in vecs:
             vec -= np.mean(vec)
 
-    def standardization(vecs):
-        centering(vecs)
-        normalization(vecs)
+    def normalization(vecs):
+        for vec in vecs:
+            vec /= np.max(vec)
 
+    def standardization(vecs):
+        for vec in vecs:
+            vec = (vec-np.mean(vec))/np.std(vec)
 
     vectors = create_bow_vectors()
 

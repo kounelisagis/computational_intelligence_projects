@@ -1,14 +1,12 @@
 from reader import *
 from preprocessor import preprocessor
-# from neural_net_adam import train_nn
-# from neural_net_adam_2_layers import train_nn
-from neural_net_sgd import train_nn
+from neural_net import train_nn
 
 vcbs = read_vocabs()
 vcbs_size = len(vcbs)
 
-# vectors_option = 'normalization'
 # vectors_option = 'centering'
+# vectors_option = 'normalization'
 vectors_option = 'standardization'
 
 train_text = read_data(filename='data/train-data.dat')
