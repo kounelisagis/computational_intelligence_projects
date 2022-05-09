@@ -7,7 +7,7 @@ def read_vocabs(filename='data/vocabs.txt'):
         for line in f:
             line = line.strip()
             vocab_name, vocab_index = line.split(', ')
-            vocabs[int(vocab_index)] = vocab_name
+            vocabs[vocab_name] = int(vocab_index)
     return vocabs
 
 
